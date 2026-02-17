@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nipaaaa.todo.dto.TodoRequest;
 import com.nipaaaa.todo.model.Todo;
 import com.nipaaaa.todo.service.TodoService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/todos")
@@ -35,12 +38,20 @@ public class TodoController {
   }
 
   @PostMapping
-  public ResponseEntity<Todo> create(@RequestBody Todo todo) {
+  public ResponseEntity<Todo> create(@Valid @RequestBody TodoRequest request) {
+    Todo todo = new Todo();
+    todo.setTitle(request.getTitle());
+    todo.setDone(request.getDone());
+
     return ResponseEntity.ok(service.create(todo));
   }
 
   @PutMapping("/{id}")
-  public ResponseEntity<Todo> update(@PathVariable long id, @RequestBody Todo todo) {
+  public ResponseEntity<Todo> update(@PathVariable long id, @Valid @RequestBody TodoRequest request) {
+    Todo todo = new Todo();
+    todo.setTitle(request.getTitle());
+    todo.setDone(request.getDone());
+
     try {
       Todo updated = service.update(id, todo);
       return ResponseEntity.ok(updated);
