@@ -49,7 +49,19 @@ Project ini dibuat untuk pembelajaran dasar:
 
 ## 📂 Project Structure
 
-src/main/java/com/example/todos/ │ ├── controller/ │   └── TodoController.java │ ├── service/ │   └── TodoService.java │ ├── repository/ │   └── TodoRepository.java │ ├── model/ │   └── Todo.java │ ├── dto/ │   └── TodoRequest.java │ ├── GlobalExceptionHandler.java └── TodoApplication.java
+src/main/java/com/example/todos/
+├── controller/
+│   └── TodoController.jav 
+├── service/
+│   └── TodoService.java
+├── repository/ 
+│   └── TodoRepository.java  
+├── model/ 
+│   └── Todo.java 
+├── dto/ 
+│   └── TodoRequest.java 
+├── GlobalExceptionHandler.java
+└── TodoApplication.java
 
 ---
 
