@@ -124,6 +124,7 @@ Body:
   "title": "Belajar Spring Boot",
   "done": false
 }
+```
 
 
 ---
@@ -134,10 +135,12 @@ PUT /api/todos/{id}
 
 Body:
 
+```json
 {
   "title": "Belajar Spring Boot JPA",
   "done": true
 }
+```
 
 
 ---
@@ -158,16 +161,20 @@ title minimal 3 karakter
 
 Example invalid request:
 
+```json
 {
   "title": "",
   "done": false
 }
+```
 
 Response:
 
+```json
 {
   "title": "Title tidak boleh kosong"
 }
+```
 
 
 ---
